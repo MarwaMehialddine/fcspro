@@ -118,3 +118,8 @@ def citiesMenu():
   else:
     print("Invalid Input")
     startcity = input("Enter:\n\n1. Show cities\n2. Print neighboring cities\n3. Print drivers delivering to city\n")
+
+# show cities in the database
+def showCities():
+  for city in cities.keys():
+    print(city.capitalize())
