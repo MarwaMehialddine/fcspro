@@ -81,3 +81,8 @@ def generateId():
   max_id = max(int(driver['id'][2:]) for driver in drivers)
   new_id = max_id + 1
   return f'ID{new_id:03d}'
+
+# looking if cities entered by the user are in the database
+def city_exist(city):
+  return cities.get(city.lower(), None)
+
