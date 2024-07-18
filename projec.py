@@ -155,3 +155,5 @@ def showDriversDelToCity():
             print(f"ID: {driver['id']}, Name: {driver['name']}, Start City: {driver['start_city'].capitalize()}")
     else:
         print("No drivers can deliver to", city_input.capitalize())
+
+startProgram()
