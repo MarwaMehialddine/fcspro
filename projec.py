@@ -148,3 +148,8 @@ def showDriversDelToCity():
             for driver in drivers:
                 if driver['start_city'].lower() in neighboring_cities:
                     drivers_near_city.append(driver)
+    if drivers_near_city:
+        print("Drivers who can deliver to", city_input.capitalize(), "are:")
+        for driver in drivers_near_city:
+            # Print details of each driver who can deliver to the city
+            print(f"ID: {driver['id']}, Name: {driver['name']}, Start City: {driver['start_city'].capitalize()}")
