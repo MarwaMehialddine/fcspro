@@ -86,3 +86,23 @@ def generateId():
 def city_exist(city):
   return cities.get(city.lower(), None)
 
+# adding drivers to the database from the user
+def addDriver():
+  driver_name = input("Enter the drivers name: ")
+  start_city = input("Enter the driver's start city: ")
+  start_city_exist = city_exist(start_city)
+  if start_city_exist is None:
+     enter_city = input("The city you entered is not in the database. Do you want to add it? Answer with yes or no: ")
+     if enter_city == 'yes':
+       cities[start_city] = []
+       print(cities)
+     else:
+       print("We cannot add the driver if the start city is not in the database. Driver not added.")
+  driver_id = str(generateId())
+  driver = {'id':driver_id, 'name':driver_name, 'start_city':start_city}
+  drivers.append(driver)
+  print('Drive with id', driver_id,', name', driver_name, 'and start city', 
+  start_city, 'is added to the drivers database')
+  for drive in drivers:
+    print(drive['id'],drive['name'],drive['start_city'])
+
