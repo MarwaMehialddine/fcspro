@@ -69,10 +69,15 @@ def driversMenu():
     print("Invalid Input")
     startdriv = input("Enter:\n\n1. To view all the drivers\n2. To add a driver\n3. To go back to the main menu\n")
 
-
 # to view the drivers
 def viewDrivers():
   if len(drivers) == 0:
     print("No drivers")
   for driver in drivers:
     print(driver['id'],driver['name'],driver['start_city'])
+
+# generating id for the drivers when added by user
+def generateId():
+  max_id = max(int(driver['id'][2:]) for driver in drivers)
+  new_id = max_id + 1
+  return f'ID{new_id:03d}'
