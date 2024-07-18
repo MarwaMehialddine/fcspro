@@ -142,3 +142,9 @@ def showDriversDelToCity():
     for driver in drivers:
         if driver['start_city'].lower() == city_input:
             drivers_near_city.append(driver)
+    if not drivers_near_city:
+        if city_input in cities:
+            neighboring_cities = cities[city_input]
+            for driver in drivers:
+                if driver['start_city'].lower() in neighboring_cities:
+                    drivers_near_city.append(driver)
