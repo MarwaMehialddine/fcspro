@@ -106,3 +106,15 @@ def addDriver():
   for drive in drivers:
     print(drive['id'],drive['name'],drive['start_city'])
 
+# introducing the cities menu
+def citiesMenu():
+  startcity = input("Enter:\n\n1. Show cities\n2. Print neighboring cities\n3. Print drivers delivering to city\n")
+  if startcity == '1':
+    showCities()
+  elif startcity == '2':
+    showNeighCities()
+  elif startcity == '3':
+    showDriversDelToCity()
+  else:
+    print("Invalid Input")
+    startcity = input("Enter:\n\n1. Show cities\n2. Print neighboring cities\n3. Print drivers delivering to city\n")
