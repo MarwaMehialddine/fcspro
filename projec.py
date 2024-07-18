@@ -133,3 +133,12 @@ def showNeighCities():
   else:
     neighboring_cities = cities[neighOfCity]
     print('Neighboring cities to', neighOfCity, 'are', '-'.join(neighboring_cities))
+  
+# check the drivers delivering to city
+def showDriversDelToCity():
+    # Show drivers who can deliver to a specified city
+    city_input = input("Enter a city name to find drivers nwho deliver to: ")
+    drivers_near_city = []
+    for driver in drivers:
+        if driver['start_city'].lower() == city_input:
+            drivers_near_city.append(driver)
