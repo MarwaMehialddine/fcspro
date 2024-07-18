@@ -123,3 +123,13 @@ def citiesMenu():
 def showCities():
   for city in cities.keys():
     print(city.capitalize())
+
+# showing the neighboring cities
+def showNeighCities():
+  neighOfCity = input("Enter the city you want to see the neighboring cities of: ")
+  neigh_of_city_exist = city_exist(neighOfCity)
+  if neigh_of_city_exist is None:
+    print(neighOfCity, 'is not in the database')
+  else:
+    neighboring_cities = cities[neighOfCity]
+    print('Neighboring cities to', neighOfCity, 'are', '-'.join(neighboring_cities))
